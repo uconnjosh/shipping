@@ -5,58 +5,50 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-1.11.0.js"></script>
     <script src="js/scripts.js"></script>
-    <title>Triangle checker</title>
+    <title>Shipping Calculator</title>
   </head>
   <body>
-    <div class="container">
-      <h1>Triangle Checker!!!</h1>
 
-      <div class="row">
-        <div class="col-md-6">
-          <form id="new-triangle">
-            <div class="form-group">
-              <label for="side1">Side 1</label>
-              <input type="text" class="form-control" id="side1">
-            </div>
-            <div class="form-group">
-              <label for="side2">Side 2</label>
-              <input type="text" class="form-control" id="side2">
-            </div>
-            <div class="form-group">
-              <label for="side3">Side 3</label>
-              <input type="text" class="form-control" id="side3">
-            </div>
+  <div class="container">
+    <div class="jumbotron">
+      <div class = "row">
+        <div class="col-md-6 col-md-offset-3">
 
-            <button type="submit" class="btn">Add</button>
-          </form>
-
-
-          <h2>The type of triangle you entered is:</h2>
-
-          <ul id="triangleResult">
-          </ul>
-        </div>
-
-
-
-
-
-
-
-      <!-- <div class="col-md-6">
-        <div id="show-triangle">
-          <h2></h2>
-
-          <p>Side 1: <span class="side1"></span></p>
-          <p>Side 2: <span class="side2"></span></p>
-          <p>Side 3: <span class="side3"></span></p>
-          <p>Side 3: <span class="result"></span></p>
-          <br />
-          <p>Your triangle is: <span class="triangleType"></span></p>
-        </div>
-      </div> -->
-    </div>
+      <h1>Welcome to FedEx</h1>
+      <br />
+      <h3>Get a shipping quote below: </h3>
+      <br>
+      <br>
     </div>
   </div>
+
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <form id="new-triangle">
+            <div class="form-group">
+              <label for="side1">How heavy is your package?</label>
+              <input type="text" class="form-control" id="weight">
+            </div>
+            <div class="form-group">
+              <label for="side2">How big is your package?</label>
+              <input type="text" class="form-control" id="size">
+            </div>
+            <div class="form-group">
+              <label for="side3">Distance in miles to ship</label>
+              <input type="text" class="form-control" id="distance">
+            </div>
+            <br>
+
+            <button type="submit" class="btn">Calculate</button>
+          </form>
+          <br>
+
+          <div id = "price"> 
+          <h4>It will cost: $<span id="shippingCost"></span> to mail your package. </h4>  
+          </div>
+</div>
+</div>
+</div>
+</div>
   </body>
 </html>

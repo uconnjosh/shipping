@@ -1,0 +1,16 @@
+body {
+  background-image:url('map.gif');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+
+
+#price {
+  display: none;
+}
+
+.jumbotron {
+  margin-top: 30px;
+}
+

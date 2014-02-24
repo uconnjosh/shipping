@@ -1,45 +1,32 @@
-var Triangle = {
-  type: function() {
-  var sides = [];
-  sides.push(this.side1);
-  sides.push(this.side2);
-  sides.push(this.side3);
-  sides.sort(function(a,b){return a-b});
-  
-  alert(sides);
+    var weightRate = 1;
+    var sizeRate = 1;
+    var distanceRate = 5;
 
-
-    if ((this.side1 === this.side2) && (this.side1 === this.side3)) {
-      return 'equilateral';
-    } else if ((sides[0] + sides[1]) < (sides[2])) {
-      return("that is not a triangle");
-    } else if ((this.side1 === this.side3) || (this.side1 === this.side2) || (this.side2 === this.side3)) {
-      return 'isosceles';
-    } else if ((this.side1 !== this.side3) && (this.side1 !== this.side2) && (this.side2 !== this.side3)) {
-      return 'scalene';
-    }
+var Package = {
+  shippingRate: function() {
+    return ((this.weight * weightRate) + (this.size * sizeRate) + (this.distance * distanceRate));
   }
-};
-
+}
 
 
 
 $(document).ready(function() {
   $("form#new-triangle").submit(function(event) {
+     $("#price").show(); 
     event.preventDefault();
 
-    var inputtedside1 = parseInt($("input#side1").val());
-    var inputtedside2 = parseInt($("input#side2").val());
-    var inputtedside3 = parseInt($("input#side3").val());
+    var inputtedweight = parseInt($("input#weight").val());
+    var inputtedsize = parseInt($("input#size").val());
+    var inputteddistance = parseInt($("input#distance").val());
 
-    var newTriangle = Object.create(Triangle);
-    newTriangle.side1 = inputtedside1;
-    newTriangle.side2 = inputtedside2;
-    newTriangle.side3 = inputtedside3;
+    var newPackage = Object.create(Package);
+    newPackage.weight = inputtedweight;
+    newPackage.size = inputtedsize;
+    newPackage.distance = inputteddistance;
 
-  $("ul#triangleResult").append("<li><span class='show-triangle'>" + newTriangle.type() + "</span></li>");
+  $("#shippingCost").text(newPackage.shippingRate());
     $(".triangleResult").last().click(function() {
-      $("#show-triangle").show(); 
+     
 
       // $("#show-triangle h2").text(newTriangle.type());
       // $(".side1").text(newTriangle.side1);
@@ -54,4 +41,17 @@ $(document).ready(function() {
 
   });
 });
+
+
+
+
+
+
+// var shippingRate = function(weight, size, distance) {
+//   totalCost = 0 ;
+//   totalCost += (weight * UnitCosts.uWeight) + (size * UnitCosts.size) + (distance * );
+//   alert(totalCost);
+
+// }
+
 
